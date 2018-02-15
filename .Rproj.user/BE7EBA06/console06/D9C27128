@@ -1,0 +1,335 @@
+[0m[0KMicrosoft Windows [Versión 10.0.16299.248][0K[?25l
+(c) 2017 Microsoft Corporation. Todos los derechos reservados.[0K
+[0K
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Analisis>[0K[?25h[?25l[2A(c) 2017 Microsoft Corporation. Todos los derechos reserv[0Ka
+dos.[0K
+[0K
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hg[0Ko[0Kt[0K[?25lis>go[0K[?25h[?25lis>g[0K[?25hi[0Kt[0K[8G[?25lis>git s[0K[?25ht[0Ka[0Kt[0Ku[0Ks[0K]0;  - git  status[?25l
+[0K[?25h]0; On branch master[0K[?25l
+[0K
+No commits yet[0K
+[0K
+Changes to be committed:[0K
+  (use "git rm --cached <file>..." to unstage)[0K
+[0K
+        [0;32mnew file:   .Rhistory[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/console06/D9C271[0K2
+8[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/console06/INDEX0[0K0
+1[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-E9D025[0KD
+2/lock_file[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/patch-ch[0Ku
+nk-names[0m[0K
+        [0;32mnew file:   Analisis.Rproj[0m[0K
+        [0;32mnew file:   BaseDeDatos/Encuesta-EducacionFinanci[0Ke
+raDario.csv[0m[0K
+        [0;32mnew file:   ProvidentRegressions.Rmd[0m[0K
+        [0;32mnew file:   ProvidentRegressions.aux[0m[0K
+        [0;32mnew file:   ProvidentRegressions.log[0m[0K
+        [0;32mnew file:   ProvidentRegressions.out[0m[0K
+        [0;32mnew file:   ProvidentRegressions.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions.synctex.gz[0m[0K
+        [0;32mnew file:   ProvidentRegressions.tex[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-1.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-2.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-5-1.pdf[0m[0K
+[0K
+Changes not staged for commit:[0K
+  (use "git add/rm <file>..." to update what will be comm[0Ki
+tted)[0K
+  (use "git checkout -- <file>..." to discard changes in [0Kw
+orking directory)[0K
+[0K
+        [0;31mmodified:   .Rproj.user/BE7EBA06/console06/D9C271[0K2
+8[0m[0K
+        [0;31mmodified:   .Rproj.user/BE7EBA06/console06/INDEX0[0K0
+1[0m[0K
+        [0;31mdeleted:    .Rproj.user/BE7EBA06/sources/s-E9D025[0KD
+2/lock_file[0m[0K
+        [0;31mmodified:   ProvidentRegressions.Rmd[0m[0K
+        [0;31mmodified:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-1.pdf[0m[0K
+        [0;31mmodified:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-2.pdf[0m[0K
+        [0;31mmodified:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-5-1.pdf[0m[0K
+[0K
+Untracked files:[0K
+  (use "git add <file>..." to include in what will be com[0Km
+itted)[0K
+[0K
+        [0;31m.Rproj.user/BE7EBA06/build_options[0m[0K
+        [0;31m.Rproj.user/BE7EBA06/sources/prop/[0m[0K
+        [0;31m.Rproj.user/BE7EBA06/sources/s-B3CB7A89/[0m[0K
+        [0;31m.Rproj.user/shared/notebooks/52828381-ProvidentRe[0Kg
+ressions/[0m[0K
+        [0;31m.Rproj.user/shared/notebooks/paths[0m[0K
+        [0;31mProvidentRegressions_files/figure-latex/unnamed-c[0Kh
+unk-5-2.pdf[0m[0K
+[0K
+[0K
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hg[0Kt[0K[?25lis>g[0K[?25hi[0Kt[0K[8G[?25lis>git a[0K[?25hd[0Kd[0K[12G[?25lis>git add .[0K[?25h]0;  - git  add .[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/BE7EB[0KA[?25l
+06/build_options.[0K
+The file will have its original line endings in your work[0Ki
+ng directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/BE7EB[0KA[?25l
+06/sources/prop/18EF1C06.[0K
+The file will have its original line endings in your work[0Ki
+ng directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/BE7EB[0KA
+06/sources/prop/INDEX.[0K
+The file will have its original line endings in your work[0Ki
+ng directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/BE7EB[0KA
+06/sources/s-B3CB7A89/8F946E38.[0K
+The file will have its original line endings in your work[0Ki
+ng directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/BE7EB[0KA
+06/sources/s-B3CB7A89/8F946E38-contents.[0K
+The file will have its original line endings in your work[0Ki
+ng directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/share[0Kd[?25l
+/notebooks/52828381-ProvidentRegressions/1/s/c9isj2ik735h[0Kh
+/00000a.csv.[0K
+The file will have its original line endings in your work[0Ki
+ng directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/share[0Kd
+/notebooks/paths.[0K
+The file will have its original line endings in your work[0Ki
+ng directory.[0K
+[0K[?25h]0; [?25l
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hgit add .[0K[?25lis>git status[0K[?25h]0;  - git  status[?25l
+[0K[?25h]0; On branch master[0K[?25l
+[0K
+No commits yet[0K
+[0K
+Changes to be committed:[0K
+  (use "git rm --cached <file>..." to unstage)[0K
+[0K
+        [0;32mnew file:   .Rhistory[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/build_options[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/console06/D9C271[0K2
+8[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/console06/INDEX0[0K0
+1[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/prop/18E[0KF
+1C06[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/prop/IND[0KE
+X[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/8F946E38[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/8F946E38-contents[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/lock_file[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/BE7EBA06B3CB7A89/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/BE7EBA06E9D025D2/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.metadata[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.png[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.snapshot[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c9isj2ik735hh/00000a.csv[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/patch-ch[0Ku
+nk-names[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/paths[0m[0K
+        [0;32mnew file:   Analisis.Rproj[0m[0K
+        [0;32mnew file:   BaseDeDatos/Encuesta-EducacionFinanci[0Ke
+raDario.csv[0m[0K
+        [0;32mnew file:   ProvidentRegressions.Rmd[0m[0K
+        [0;32mnew file:   ProvidentRegressions.aux[0m[0K
+        [0;32mnew file:   ProvidentRegressions.log[0m[0K
+        [0;32mnew file:   ProvidentRegressions.out[0m[0K
+        [0;32mnew file:   ProvidentRegressions.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions.synctex.gz[0m[0K
+        [0;32mnew file:   ProvidentRegressions.tex[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-1.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-2.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-5-1.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-5-2.pdf[0m[0K
+[0K
+Changes not staged for commit:[0K
+  (use "git add <file>..." to update what will be committ[0Ke
+d)[0K
+  (use "git checkout -- <file>..." to discard changes in [0Kw
+orking directory)[0K
+[0K
+        [0;31mmodified:   .Rproj.user/BE7EBA06/console06/D9C271[0K2
+8[0m[0K
+[0K
+[0K
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hg[0Ki[0Kt[0K[8G[?25lis>git a[0K[?25hd[0Kd[0K[12G[?25lis>git add .[0K[?25h]0;  - git  add .[?25l
+[0K[?25h]0; [?25l
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hgit add .[0K[?25lis>git status[0K[?25h]0;  - git  status[?25l
+[0K[?25hOn branch master[0K[?25l
+[0K
+No commits yet[0K
+[0K
+Changes to be committed:[0K
+  (use "git rm --cached <file>..." to unstage)[0K
+[0K
+        [0;32mnew file:   .Rhistory[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/build_options[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/console06/D9C271[0K2
+8[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/console06/INDEX0[0K0
+1[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/prop/18E[0KF
+1C06[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/prop/IND[0KE
+X[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/8F946E38[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/8F946E38-contents[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/lock_file[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/BE7EBA06B3CB7A89/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/BE7EBA06E9D025D2/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.metadata[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.png[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.snapshot[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c9isj2ik735hh/00000a.csv[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/patch-ch[0Ku
+nk-names[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/paths[0m[0K
+        [0;32mnew file:   Analisis.Rproj[0m[0K
+        [0;32mnew file:   BaseDeDatos/Encuesta-EducacionFinanci[0Ke
+raDario.csv[0m[0K
+        [0;32mnew file:   ProvidentRegressions.Rmd[0m[0K
+        [0;32mnew file:   ProvidentRegressions.aux[0m[0K
+        [0;32mnew file:   ProvidentRegressions.log[0m[0K
+        [0;32mnew file:   ProvidentRegressions.out[0m[0K
+        [0;32mnew file:   ProvidentRegressions.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions.synctex.gz[0m[0K
+        [0;32mnew file:   ProvidentRegressions.tex[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-1.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-2.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-5-1.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-5-2.pdf[0m[0K
+[0K
+Changes not staged for commit:[0K
+  (use "git add <file>..." to update what will be committ[0Ke
+d)[0K
+  (use "git checkout -- <file>..." to discard changes in [0Kw
+orking directory)[0K
+[0K
+        [0;31mmodified:   .Rproj.user/BE7EBA06/console06/D9C271[0K2
+8[0m[0K
+[0K
+[0K[?25h]0; [?25l
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hg[0Ki[0Kt[0K[8G[?25lis>git i[0K[?25hn[0Ki[0Kt[0K]0;  - git  init[?25l
+[0K[?25hReinitialized existing Git repository in C:/Users/dtruj/D[0Kr[?25l
+opbox/1.- Provident [Sonia, Darío]/Analisis/.git/[0K
+[0K[?25h]0; [?25l
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hg[0Ki[0Kt[0K[8G[?25lis>git s[0K[?25ht[0Ka[0Kt[0Ku[0Ks[0K]0;  - git  status[?25l
+[0K[?25h]0; On branch master[0K[?25l
+[0K
+No commits yet[0K
+[0K
+Changes to be committed:[0K
+  (use "git rm --cached <file>..." to unstage)[0K
+[0K
+        [0;32mnew file:   .Rhistory[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/build_options[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/console06/D9C271[0K2
+8[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/console06/INDEX0[0K0
+1[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/prop/18E[0KF
+1C06[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/prop/IND[0KE
+X[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/8F946E38[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/8F946E38-contents[0m[0K
+        [0;32mnew file:   .Rproj.user/BE7EBA06/sources/s-B3CB7A[0K8
+9/lock_file[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/BE7EBA06B3CB7A89/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/BE7EBA06E9D025D2/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.metadata[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.png[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c34oa0zwx2pn7/000004.snapshot[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/c9isj2ik735hh/00000a.csv[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/52828381[0K-
+ProvidentRegressions/1/s/chunks.json[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/patch-ch[0Ku
+nk-names[0m[0K
+        [0;32mnew file:   .Rproj.user/shared/notebooks/paths[0m[0K
+        [0;32mnew file:   Analisis.Rproj[0m[0K
+        [0;32mnew file:   BaseDeDatos/Encuesta-EducacionFinanci[0Ke
+raDario.csv[0m[0K
+        [0;32mnew file:   ProvidentRegressions.Rmd[0m[0K
+        [0;32mnew file:   ProvidentRegressions.aux[0m[0K
+        [0;32mnew file:   ProvidentRegressions.log[0m[0K
+        [0;32mnew file:   ProvidentRegressions.out[0m[0K
+        [0;32mnew file:   ProvidentRegressions.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions.synctex.gz[0m[0K
+        [0;32mnew file:   ProvidentRegressions.tex[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-1.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-3-2.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-5-1.pdf[0m[0K
+        [0;32mnew file:   ProvidentRegressions_files/figure-lat[0Ke
+x/unnamed-chunk-5-2.pdf[0m[0K
+[0K
+Changes not staged for commit:[0K
+  (use "git add <file>..." to update what will be committ[0Ke
+d)[0K
+  (use "git checkout -- <file>..." to discard changes in [0Kw
+orking directory)[0K
+[0K
+        [0;31mmodified:   .Rproj.user/BE7EBA06/console06/D9C271[0K2
+8[0m[0K
+[0K
+[0K
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hg[0Ki[0Kt[0K[8G[?25lis>git i[0K[?25hn[0Ki[0Kt[0K]0;  - git  init[?25l
+[0K[?25hReinitialized existing Git repository in C:/Users/dtruj/D[0Kr[?25l
+opbox/1.- Provident [Sonia, Darío]/Analisis/.git/[0K
+[0K[?25h]0; [?25l
+C:\Users\dtruj\Dropbox\1.- Provident [Sonia, Darío]\Anali[0Ks
+is>[0K[?25hg[0Ki[0Kt[0K[8G[?25lis>git a[0K[?25hd[0Kd[0K[12G[?25lis>git add .[0K[?25h

@@ -1,0 +1,283 @@
+---
+title: "Provident Regressions"
+author: "Dario Trujano Ochoa"
+date: "Enero 2018"
+output: 
+  pdf_document: 
+    keep_tex: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list = ls())
+library("pacman")
+p_load(readxl)
+p_load(MASS)
+p_load("erer")
+p_load("gtools")
+p_load("dplyr")
+p_load("stargazer")
+
+#setwd("C:/Users/dtruj/Google Drive/Maestria/CIDE-2015/ProyectosVarios/Provident/RAnalysis")
+
+```
+
+## Data Base
+
+I imported the data to R; then, I cleaned for the cases with missing values and reconfigured some variables:
+
+```{r}
+# import with more data
+ProvidentDF_complete<- read.csv("BaseDeDatos/Encuesta-EducacionFinancieraDario.csv")
+
+ProvidentDF_complete <- ProvidentDF_complete %>% filter(Status=="Completa") %>% 
+  filter(!is.na(p9_batepelota)) # question 9 and 12 have missing values
+# measure grit as the average of the points made in each item
+ProvidentGRIT <- data.frame(
+  ProvidentDF_complete$X1..Los.proyectos.o.ideas.nuevas.me.distraen.de.proyectos.o.ideas.que.ten.a.desde.antes.,
+  ProvidentDF_complete$X2..Los..bstaculos.no.me.desaniman.,
+  ProvidentDF_complete$X3..Estuve.concentrado.en.una.idea.o.proyecto.por.un.corto.tiempo..pero.despu.s.perd..inter.s.,
+  ProvidentDF_complete$X4..Trabajo.duro.,
+  ProvidentDF_complete$X5..Con.frecuencia.me.propongo.un.objetivo..pero.luego.trato.de.cumplir.un.objetivo.diferente,
+  ProvidentDF_complete$X6..Me.resulta.dificil.mantener.mi.atenci.n.en.proyectos.que.duran.m.s.all..de.algunos.meses.en.terminar,
+  ProvidentDF_complete$X7..Soy.chambeador.a.)
+ProvidentGRIT <- apply(substr(apply(ProvidentGRIT, MARGIN = 2,FUN = as.character),start = 1,stop = 1),FUN = as.numeric,MARGIN = 2)
+ProvidentGRIT[,c(1,3,5,6)] <- -ProvidentGRIT[,c(1,3,5,6)] + 4
+ProvidentDF_nna <- ProvidentDF_complete %>%  # there is no missing values in this DF
+  mutate(grit=rowMeans(ProvidentGRIT)) 
+ProvidentDF_nna <- ProvidentDF_nna[!is.na(ProvidentDF_nna$p9_batepelota),]
+
+# Education
+escol <- as.character(ProvidentDF_nna$escol)
+escol[escol=="No estudi?"] <- 0
+escol[escol=="1ro Primaria"] <- 1
+escol[escol=="2do Primaria"] <- 2
+escol[escol=="3ro Primaria"] <- 3
+escol[escol%in%c("4to primaria","4to Primaria")] <- 4
+escol[escol=="5to Primaria"] <- 5
+escol[escol%in%c(" 6to Primaria","6to Primaria")] <- 6
+escol[escol=="1ro Secundaria"] <- 7
+escol[escol%in%c("2do Secundaria","2do secundaria")] <- 8
+escol[escol%in%c("3ro secundaria","3ro Secundaria ","3ro Secundaria")] <- 9
+escol[escol=="1ro Preparatoria"] <- 10
+escol[escol=="2do Preparatoria"] <- 11
+escol[escol=="3ro Preparatoria"] <- 12
+escol[escol=="Licenciatura"] <- 13
+escol[escol=="Posgrado"] <- 14
+escol <- as.numeric(escol)
+
+#original measure
+escol1 <- escol
+escol1[escol1%in%c(1:6)]<- 0 # Primaria
+escol1[escol1%in%c(7:9)]<- 1 # Secundaria
+escol1[escol1%in%c(10:12)]<- 2 # Preparatoria
+escol1[escol1%in%c(13)]<- 3 # Licenciatura
+escol1[escol1%in%c(14)]<- 4 # Posgrado
+
+
+
+#some order for ordinal data
+ProvidentDF_nna$grupo <- factor(ProvidentDF_nna$grupo, levels=c("Current", "Low Arrear","High arrear"), ordered=TRUE)
+
+attach(ProvidentDF_nna)
+```
+
+
+* Just married and not married
+  - Married = 1
+  
+* Employment as an ordinal variable. 
+  - Full-time employment = 3
+  - Half-time employment = 2
+  - Self-employment = 1
+  - No earnings = 0
+
+```{r}
+p16_dependents<- p16_1menores+p16_2adulmay+p16_3otros # total number of dependents
+casado<-{} # to capture later de degree of responsability, we just need married or unmarried people
+casado[p15_estadocivil=="Casado"]<- 1
+casado[p15_estadocivil!="Casado"]<- 0
+empleoRemunerado <- {} # consider non paid work together 
+empleoRemunerado[statusempleo%in%c("Desempleados","Ama de Casa","Retirado")]<- 0
+empleoRemunerado[statusempleo=="Auto empleado"]<- 1
+empleoRemunerado[statusempleo=="Empleado Medio tiempo"]<- 2
+empleoRemunerado[statusempleo=="Empleado tiempo completo"]<- 3
+
+```
+
+* To masure the responses in the Finantial literacy we take the distance from the correct answers:
+
+```{r}
+# pregunta del bat y la pelota:
+# We can see that most people answered predictably bad: $ 10. But no one answered correctly.
+barplot(table(p9_batepelota))
+#9. Un bate y una pelota de b?isbol cuestan en total $110 pesos. 
+#El bate cuesta $100 m?s que la pelota, 
+#?Cu?nto cuesta la pelota? (Indique el costo en pesos de la pelota)
+## Respuesta correcta: $5
+
+p9_batepelota<- abs(p9_batepelota-5)
+
+# pregunta sobre el Inter?s
+barplot(table(p12_retornodeposito))
+#12. Imag?nese que usted deposita $1,000 pesos al inicio del a?o en una cuenta de ahorro 
+#con un inter?s garantizado del 2% al a?o y la cuenta no tiene ning?n costo por mantenerla. 
+#Adem?s, suponga que usted no saca dinero de esa cuenta.
+#?Cu?nto dinero tendr?a en la cuenta despu?s de un a?o incluyendo el pago de los intereses?
+## Respuesta Correcta: 1020
+p12_retornodeposito <- abs(p12_retornodeposito-1020)
+```
+
+
+  
+## PCA analysis
+
+First of all I have to highlight that there is an important error in the way indeces were constructed in the article: eigenvalues were calculated using no centered data which lead towards a biased estimate of the index. In this case the variable with the hights mena will attract all the weight.
+
+Considering that all the regression made over the those indices are wrong.
+
+I'll consider the ideces as constructed in the article:
+
+```{r}
+# time preference
+TP <- prcomp(na.omit(cbind(p10_tandacorto,p11_tandalargo)),center = T,scale. = T)
+#cognitive hability
+CA <- prcomp(na.omit(cbind( p9_batepelota, p12_retornodeposito,p13_preciosbajan,escol)),center = T,scale. = T) # For p13, "VERDADERO" was considered as 1 (TRUE)
+# cognitive ability with less levels for escol
+CA1 <- prcomp(na.omit(cbind( p9_batepelota, p12_retornodeposito,p13_preciosbajan,escol1)),center = T,scale. = T)
+# responsability
+RES <- prcomp(na.omit(cbind(edad,hijos,casado, p16_dependents)),center = T,scale. = T)
+# economic sucess
+ES <- prcomp(na.omit(cbind(empleoRemunerado,SCelular,STelCasa,SResidencia)),center = T,scale. = T)
+```
+
+PCA visual analysis shows that there is no a big difference in the variance explained by the components:
+
+```{r, echo=FALSE}
+par(mfrow=c(2,2))
+plot(TP, type="l")
+s<- summary(TP)
+barplot(s$importance[2,],ylim=c(0,1), col="white",main="Temporal Preferences",ylab="Proportion of Variance")
+plot(CA1, type="l")
+s<- summary(CA1)
+barplot(s$importance[2,],ylim=c(0,1), col="white",main="Cognitive Ability",ylab="Proportion of Variance")
+plot(RES, type="l")
+plot(ES, type="l")
+```
+
+### PCA weigths
+
+```{r}
+TP$rotation
+CA1$rotation
+RES$rotation
+ES$rotation
+```
+
+
+## Final Regressions with PCA
+
+```{r, results='asis'}
+
+DV <- cbind.data.frame(
+       Grit = grit,
+       TP1 = TP$x[,1], TP2 = TP$x[,2],
+       CA1 = CA1$x[,1], CA2 = CA1$x[,2],
+       ES1 = ES$x[,1], ES2 = ES$x[,2],
+       edad, hijos,casado, p16_dependents,
+       ProvidentDF_nna$Prestamos.activos,
+       Genero)
+
+final_regression <- polr(grupo ~ Grit+TP2+CA2+edad, data = DV,Hess=TRUE,na.action = na.omit) # model
+  stargazer(final_regression)
+  
+```
+
+In order to maintain the significance of CA2, it was required that escol was constructed according with the first categorization, otherwise the component is significative just at 10%. It is remarkable that this categorization consider no instruction and elementary instruction in the same level of escolarity.
+
+#### Robustez
+
+```{r,results= 'asis', echo=FALSE}
+
+final_regressions2 <- polr(grupo ~ Grit+TP1+TP2+CA2+edad, data = DV ,Hess=TRUE,na.action = na.omit) # model
+#  stargazer(final_regressions2)
+  
+final_regressions3 <- polr(grupo ~ Grit+TP1+TP2+CA2+edad+casado, data = DV,Hess=TRUE,na.action = na.omit) # model
+#  stargazer(final_regressions3)
+
+final_regressions4 <- polr(grupo ~ Grit+TP2+CA2, data = DV,Hess=TRUE,na.action = na.omit) # model
+#  stargazer(final_regressions4)
+  
+final_regressions5 <- polr(grupo ~ Grit+TP2+CA2+edad, data = DV,Hess=TRUE,na.action = na.omit) # model
+#  stargazer(final_regressions5)
+  
+  
+# quitar grit a la regression1 quitar CA 
+  
+final_regressions6 <- polr(grupo ~ TP1+TP2+CA2+edad, data = DV,Hess=TRUE,na.action = na.omit) # model
+#  stargazer(final_regressions6)
+
+final_regressions7 <- polr(grupo ~ Grit+TP1+TP2+edad, data = DV,Hess=TRUE,na.action = na.omit) # model
+#  stargazer(final_regressions7)
+  
+stargazer(final_regression, # para comparar
+          final_regressions2, 
+          final_regressions3, 
+          final_regressions4, 
+          final_regressions5, 
+          final_regressions6, 
+          final_regressions7, 
+          add.lines = list( # AIC and BIC
+            c("AIC", round(AIC(final_regression, 
+          final_regressions2, 
+          final_regressions3, 
+          final_regressions4, 
+          final_regressions5, 
+          final_regressions6, 
+          final_regressions7)[,2], digits = 2)),
+          c("BIC", round(BIC(final_regression, 
+          final_regressions2, 
+          final_regressions3, 
+          final_regressions4, 
+          final_regressions5, 
+          final_regressions6, 
+          final_regressions7)[,2],digits = 2))
+          ))
+  
+```
+
+## Considering debt history
+
+```{r,results='asis', echo=FALSE}
+
+prestamos_regression <- polr(grupo ~ Grit+TP1+TP2+CA2+edad, data = DV,Hess=TRUE,na.action = na.omit) # model # CA1 with more numbers lose significance
+#  stargazer(prestamos_regression)
+
+prestamos_regression2 <- polr(grupo ~ Grit+TP1+TP2+CA2+edad+Prestamos.activos, data = DV,Hess=TRUE,na.action = na.omit) # model
+# se pierden significancias
+  
+prestamos_regression3 <- polr(grupo ~ Grit+p10_tandacorto+p11_tandalargo+CA2+p10_tandacorto+p11_tandalargo+edad+Prestamos.activos, data = DV,Hess=TRUE,na.action = na.omit) # model
+
+
+  stargazer(prestamos_regression, 
+            prestamos_regression2, 
+            prestamos_regression3, 
+            add.lines = list( # AIC and BIC
+            c("AIC", round(AIC(
+            prestamos_regression, 
+            prestamos_regression2, 
+            prestamos_regression3)[,2],digits = 2)),
+          c("BIC", round(BIC( 
+            prestamos_regression, 
+            prestamos_regression2, 
+            prestamos_regression3)[,2],digits = 2))
+          ))
+  
+```
+
+```{r,echo=FALSE}
+detach(ProvidentDF_nna)
+
+```
+
+
